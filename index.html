@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="movil.css">
 </head>
 <body>
     <!-- Cintilla superior -->
@@ -212,8 +213,29 @@
     </footer>
 
     <script>
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            document.querySelector('.menu-navegacion').classList.toggle('menu-abierto');
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menuNavegacion = document.querySelector('.menu-navegacion');
+        const menuLinks = document.querySelectorAll('.menu-navegacion a');
+
+        menuToggle.addEventListener('click', function() {
+            menuNavegacion.classList.toggle('menu-abierto');
+        });
+
+        // Cerrar el menú al hacer clic en un enlace
+        menuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                menuNavegacion.classList.remove('menu-abierto');
+            });
+        });
+
+        // Cerrar el menú al hacer clic fuera de él
+        document.addEventListener('click', function(event) {
+            const isClickInsideMenu = menuNavegacion.contains(event.target);
+            const isClickOnToggle = menuToggle.contains(event.target);
+            
+            if (!isClickInsideMenu && !isClickOnToggle && menuNavegacion.classList.contains('menu-abierto')) {
+                menuNavegacion.classList.remove('menu-abierto');
+            }
         });
     </script>
 </body>
