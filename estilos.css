@@ -112,6 +112,16 @@ body {
     color: var(--azul);
 }
 
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--negro);
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+}
+
 /* Sección Hero */
 .hero {
     position: relative;
@@ -607,4 +617,141 @@ body {
     color: var(--blanco);
     font-size: 16px;
     margin: 5px 0;
+}
+
+/* Media Queries - Mobile 480px */
+@media (max-width: 480px) {
+    .cintilla {
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .cintilla-contenedor {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .barra-navegacion {
+        height: auto;
+        padding: 15px 0;
+    }
+
+    .barra-contenedor {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu-navegacion {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+        border-top: 1px solid #eee;
+        padding-top: 15px;
+        margin-top: 15px;
+    }
+
+    .menu-navegacion.menu-abierto {
+        display: flex;
+    }
+
+    .menu-navegacion li {
+        width: 100%;
+        border-bottom: 1px solid #eee;
+        padding: 10px 0;
+    }
+
+    .menu-navegacion a {
+        display: block;
+        width: 100%;
+    }
+
+    .hero {
+        height: auto;
+        min-height: auto;
+        padding: 40px 0;
+    }
+
+    .hero .contenedor {
+        height: auto;
+        justify-content: center;
+    }
+
+    .hero-contenido {
+        max-width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-titulo {
+        font-size: 28px;
+    }
+
+    .hero-descripcion {
+        font-size: 16px;
+    }
+
+    .hero-botones {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .boton {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .empresa-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .servicios-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .servicio-card {
+        padding: 30px 20px;
+    }
+
+    .promociones-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .instalaciones-galeria {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .instalacion-item {
+        margin: 0;
+        width: 100%;
+    }
+
+    .instalacion-imagen {
+        height: auto;
+        width: 100%;
+    }
+
+    .empresa-titulo,
+    .servicios-titulo,
+    .promociones-titulo,
+    .instalaciones-titulo {
+        font-size: 28px;
+    }
+
+    .contenedor {
+        padding: 0 15px;
+    }
 }
